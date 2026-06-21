@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  hysteria2:
+    build: .
+    container_name: hy2-single
+    restart: always
+    network_mode: "host" 
+    environment:
+      - HY2_PORT=8443 # 你想使用的单端口
+      - HY2_PASSWORD=YourSecretPassword2026 # 你的强密码

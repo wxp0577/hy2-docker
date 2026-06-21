@@ -6,6 +6,8 @@ services:
     container_name: hy2-single
     restart: always
     network_mode: "host" 
+    volumes:
+      - ./cert:/cert # 新增这一行：将证书和自动生成的密码保存在当前目录，防止重启丢失
     environment:
-      - HY2_PORT=8443 # 你想使用的单端口
-      - HY2_PASSWORD=YourSecretPassword2026 # 你的强密码
+      - HY2_PORT=8443
+      # 我把 HY2_PASSWORD 这一行删掉了，系统就会自动帮你生成密码！
